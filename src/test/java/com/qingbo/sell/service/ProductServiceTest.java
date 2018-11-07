@@ -42,4 +42,13 @@ public class ProductServiceTest {
         ProductInfo one = service.findOne("123321");
         System.out.println(one.getProductName());
     }
+
+    @Test
+    public void increaseStock() {
+    }
+
+    @Test
+    public void decreaseStock() {
+
+    }
 }
