@@ -3,7 +3,7 @@ package com.qingbo.sell.enums;
 import lombok.Getter;
 
 @Getter
-public enum EOrderStatus {
+public enum EOrderStatus implements CodeEnum{
     NEW(0,"新订单"),
     FINISHED(1,"已️完结"),
     CANCEL(2,"取消");

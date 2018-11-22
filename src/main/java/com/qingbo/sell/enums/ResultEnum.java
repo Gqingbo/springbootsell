@@ -3,7 +3,7 @@ package com.qingbo.sell.enums;
 import lombok.Getter;
 
 @Getter
-public enum ResultEnum {
+public enum ResultEnum implements CodeEnum{
     PARAM_ERROR(1, "参数错误"),
     CART_EMPTY(2, "购物车为空"),
 
