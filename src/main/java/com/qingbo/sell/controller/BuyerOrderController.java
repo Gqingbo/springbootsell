@@ -6,6 +6,7 @@ import com.qingbo.sell.dto.OrderDTO;
 import com.qingbo.sell.enums.ResultEnum;
 import com.qingbo.sell.exception.OrderException;
 import com.qingbo.sell.form.OrderForm;
+import com.qingbo.sell.service.BuyerService;
 import com.qingbo.sell.service.OrderService;
 import com.qingbo.sell.utils.ResultVOUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -21,10 +22,6 @@ import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by 廖师兄
- * 2017-06-18 23:27
- */
 @RestController
 @RequestMapping("/buyer/order")
 @Slf4j
@@ -33,8 +30,8 @@ public class BuyerOrderController {
     @Autowired
     private OrderService orderService;
 
-//    @Autowired
-//    private BuyerService buyerService;
+    @Autowired
+    private BuyerService buyerService;
 
     //创建订单
     @PostMapping("/create")
@@ -76,11 +73,11 @@ public class BuyerOrderController {
     }
 
 
-   /* //订单详情
+    //订单详情
     @GetMapping("/detail")
     public ResultVO detail(@RequestParam("openid") String openid,
                            @RequestParam("orderId") String orderId) {
-        OrderDTO orderDTO = buyerService.findOrderOne(openid, orderId);
+        OrderDTO orderDTO = buyerService.findOrderOne(openid,orderId);
         return ResultVOUtil.success(orderDTO);
     }
 
@@ -88,7 +85,7 @@ public class BuyerOrderController {
     @PostMapping("/cancel")
     public ResultVO cancel(@RequestParam("openid") String openid,
                            @RequestParam("orderId") String orderId) {
-        buyerService.cancelOrder(openid, orderId);
-        return ResultVOUtil.success();
-    }*/
+        OrderDTO orderDTO = buyerService.cancelOrder(openid,orderId);
+        return ResultVOUtil.success(orderDTO);
+    }
 }

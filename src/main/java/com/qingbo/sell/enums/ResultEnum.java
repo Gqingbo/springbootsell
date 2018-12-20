@@ -14,8 +14,10 @@ public enum ResultEnum implements CodeEnum{
     ORDER_PAY_STATUS_ERROR(24,"订单支付状态异常"),
 
     PRODUCT_NOT_EXIST(10,"商品不存在"),
-    PRODUCT_STOCK_ERR(11,"库存不正确")
+    PRODUCT_STOCK_ERR(11,"库存不正确"),
 
+    ORDER_OPENID_ERROR(12,"openId非法"),
+    WeChart_Mp_ERROR(13,"微信公众号相关异常"),
     ;
 
     private Integer code;

@@ -1,6 +1,7 @@
 package com.qingbo.sell.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.qingbo.sell.dataobject.OrderDetail;
 import com.qingbo.sell.enums.EOrderStatus;
